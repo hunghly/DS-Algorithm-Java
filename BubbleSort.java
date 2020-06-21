@@ -6,6 +6,7 @@ class BubbleSort {
 
         // Start from the end of the array and decrement
         // Typically two loops mean O(n^2) or quadratic algorithm
+        // Bubble sort is a stable sort algorithm or preserves the index location if the sorted values have duplicates
         for (int lastUnsortedIndex = intArray.length - 1; lastUnsortedIndex > 0; lastUnsortedIndex--) {
             for (int i = 0; i < lastUnsortedIndex; i++) {
                 if (intArray[i] > intArray[i + 1]) {
