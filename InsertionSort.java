@@ -2,31 +2,24 @@ public class InsertionSort {
 
     public static void main(String[] args) {
         int[] intArray = { 20, 35, -15, 7, 55, 1 - 22 };
-        int currentElement;
+
+        // Also an in-place algorithm
+        // Runs in O(n^2) - quadratic
+        // It is a stable sorting algorithm
         for (int firstUnsortedIndex = 1; firstUnsortedIndex < intArray.length; firstUnsortedIndex++) {
-            currentElement = intArray[firstUnsortedIndex];
-            for (int j = firstUnsortedIndex; j > 0; j--) {
-                // go through the unsorted index and check to see if that index's value is smaller, if it is move the array down
-                if (intArray[j] < intArray[j - 1]) {
-                    // swap(intArray, j, j - 1);
-                    intArray[j] = intArray[j-1];
-                }
-                if (j ==)
+            int currentElement = intArray[firstUnsortedIndex];
+            int j;
+            for (j = firstUnsortedIndex; j > 0 && intArray[j - 1] > currentElement; j--) {
+                // go through the unsorted index and swap as long as the currentElement is less
+                // than the previous index
+                intArray[j] = intArray[j - 1];
             }
+            intArray[j] = currentElement;
         }
 
         for (int i = 0; i < intArray.length; i++) {
             System.out.println(intArray[i]);
         }
-    }
-
-    public static void swap(int[] array, int i, int j) {
-        if (i == j) {
-            return;
-        }
-        int temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
     }
 
 }
