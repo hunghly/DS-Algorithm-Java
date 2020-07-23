@@ -2,6 +2,7 @@ package lists.arraylists;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Vector;
 
 public class Main {
 
@@ -9,7 +10,10 @@ public class Main {
 
         // ArrayList is good for random access and if you know the index. Good for iterating over the list but not for inserting/deletion/removing and accessing if you do not know the index.
 
-        List<Employee> employeeList = new ArrayList<>();
+//        List<Employee> employeeList = new ArrayList<>();
+
+        // You could change the ArrayList to a Vector (synchronized). Using a vector will be better for multi-thread operations where many people could be writing to the same List. If you use Vector, it has additional overhead.
+        List<Employee> employeeList = new Vector<>();
         employeeList.add(new Employee("Hung", "Ly", 123));
         employeeList.add(new Employee("Mike", "Jordan", 2323));
         employeeList.add(new Employee("David", "Blaine", 100));
